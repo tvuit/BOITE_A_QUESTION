@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(version: 20180326150545) do
 
   create_table "questions", force: :cascade do |t|
     t.string "title"
-    t.text "descripiton"
+    t.text "description"
     t.text "answer"
     t.datetime "post_date"
     t.datetime "created_at", null: false

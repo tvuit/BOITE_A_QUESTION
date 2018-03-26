@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <% @questions.order(:cached_votes_down).each do |question|  %>
+        <div class="product">
+          <div class="product-upvote">
+            <%= link_to like_question_path(question), method: :put do %>
+            <i class=".icon-circle-arrow-up"></i><% end %>
+            <div class='product-count'><%= question.get_upvotes.size %></div>
+          </div>
+          <div class="product-body">
+            <h3><%= question.title %></h3>
+            <p><%= question.decription %></p>
+          </div>
+      </div>
+      <% end  %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12 col-sm-offset-4 col-sm-4">
+      <%= link_to "Poser une nouvelle question", new_question_path, class:"btn btn-primary revote" %>
+    </div>
+  </div>
+</div>
