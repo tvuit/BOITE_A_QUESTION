@@ -18,10 +18,19 @@ ActiveRecord::Schema.define(version: 20180326150545) do
   create_table "questions", force: :cascade do |t|
     t.string "title"
     t.text "description"
-    t.text "answer"
-    t.datetime "post_date"
+    t.boolean "asked"
+    t.date "end_date"
+    t.integer "cached_votes_total", default: 0
+    t.integer "cached_votes_score", default: 0
+    t.integer "cached_votes_up", default: 0
+    t.integer "cached_votes_down", default: 0
+    t.integer "cached_weighted_score", default: 0
+    t.integer "cached_weighted_total", default: 0
+    t.float "cached_weighted_average", default: 0.0
+    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_questions_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -55,4 +64,5 @@ ActiveRecord::Schema.define(version: 20180326150545) do
     t.index ["voter_id", "voter_type", "vote_scope"], name: "index_votes_on_voter_id_and_voter_type_and_vote_scope"
   end
 
+  add_foreign_key "questions", "users"
 end

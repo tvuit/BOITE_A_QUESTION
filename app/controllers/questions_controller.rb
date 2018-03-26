@@ -47,7 +47,7 @@ class QuestionsController < ApplicationController
  private
 
   def question_params
-    params.require(:question).permit(:title, :decription, :end_date, :asked, :votes)
+    params.require(:question).permit(:title, :description, :end_date, :asked, :votes)
   end
 
   def set_question

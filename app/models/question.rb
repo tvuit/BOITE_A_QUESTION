@@ -1,6 +1,6 @@
 class Question < ApplicationRecord
-    acts_as_votable
     belongs_to :user
+    acts_as_votable
     validates :title, uniqueness: true, presence: true
 
 end
