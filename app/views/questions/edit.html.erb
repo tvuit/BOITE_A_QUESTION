@@ -1,1 +1,14 @@
-edit.html.erb
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-8 col-sm-offset-2">
+      <div class="form-question">
+        <h2>Modifier votre question</h2>
+        <%= simple_form_for [@question], :method => :patch do |f| %>
+          <%= f.input :title, label: "Intitulé de votre question", placeholder:"Rédigez une question claire et concise" %>
+          <%= f.input :description, label:false, placeholder:"Vous pouvez ajouter ici des éléments pour préciser votre question" %>
+          <%= f.submit "Publier sa question", class: "btn revote" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

@@ -7,6 +7,29 @@
    }
 }
 
+.fa-trash {
+  color: #404040;
+  font-size: 32px;
+   &:hover {
+    font-size: 36px;
+    color: #f9c333;
+   }
+}
+
+.fa-edit {
+  color: #404040;
+  font-size: 32px;
+   &:hover {
+    font-size: 36px;
+    color: #f9c333;
+    text-decoration: none;
+   }
+}
+
+.edit-buttons {
+  padding: 20px;
+}
+
 .product {
   display: flex;
   align-items: center;

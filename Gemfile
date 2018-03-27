@@ -9,10 +9,10 @@ gem 'puma'
 gem 'rails', '5.1.5'
 gem 'redis'
 gem 'acts_as_votable', '~> 0.11.1'
-
+gem 'pundit'
+gem 'font-awesome-sass', '~> 4.4.0'
 gem 'autoprefixer-rails'
 gem 'bootstrap-sass', '~> 3.3'
-gem "font-awesome-rails"
 gem 'sass-rails'
 gem 'simple_form'
 gem 'uglifier'

@@ -1,8 +1,9 @@
 <div class="container">
   <div class="row">
     <div class="col-xs-10 col-xs-offset-1 col-sm-4 col-sm-offset-4">
-      <%# raise %>
+      <% if policy(Question).create? %>
       <%= link_to "Poser une nouvelle question", new_question_path, class:"btn revote" %>
+      <% end %>
     </div>
   </div>
   <div class="row">
@@ -18,7 +19,15 @@
             <h3><%= question.title %></h3>
             <p><%= question.description %></p>
           </div>
-      </div>
+          <div class="edit-buttons">
+            <% if policy(Question).destroy? %>
+               <%= link_to "", question, method: :delete, class:"fa fa-trash" %>
+            <% end %>
+            <% if policy(Question).edit? %>
+               <%= link_to "", edit_question_path(question), class:"fa fa-edit" %>
+            <% end %>
+          </div>
+        </div>
       <% end  %>
     </div>
   </div>
