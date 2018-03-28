@@ -20,13 +20,11 @@ class QuestionsController < ApplicationController
 
   def destroy
     @question.destroy
-    authorize @question
     redirect_to(questions_path)
   end
 
   def create
-    @question = Question.new(question_params)
-    @question.user_id = current_user.id
+    @question = current_user.questions.build(question_params)
     @question.save
     authorize @question
 
@@ -36,8 +34,6 @@ class QuestionsController < ApplicationController
   def update
     @question.update(question_params)
     redirect_to(questions_path)
-
-    authorize @question
   end
 
   def upvote

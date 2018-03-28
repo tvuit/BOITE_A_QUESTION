@@ -5,23 +5,16 @@ class QuestionPolicy < ApplicationPolicy
     end
   end
 
-  def show?
-    true
-  end
 
   def create?
     true
   end
 
   def destroy?
-    true
+    record.user.id == user.id
   end
 
   def upvote?
-    true
-  end
-
-  def edit?
     true
   end
 

@@ -8,6 +8,7 @@
 }
 
 .fa-trash {
+  margin: auto;
   color: #404040;
   font-size: 32px;
    &:hover {
@@ -16,7 +17,8 @@
    }
 }
 
-.fa-edit {
+.fa-pencil {
+  margin: 20px auto;
   color: #404040;
   font-size: 32px;
    &:hover {
@@ -26,19 +28,15 @@
    }
 }
 
-.edit-buttons {
-  padding: 20px;
-}
-
 .product {
   display: flex;
   align-items: center;
-  padding: 20px;
+  padding: 8px;
   border-radius: 3px;
   transition: all 0.15s ease;
   background-color: white;
   box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-  margin: 20px;
+  margin: 10px 4px;
 }
 
 /* Body design */
@@ -65,13 +63,13 @@
 
 /* Upvote design */
 .product-upvote {
-  padding-right: 20px;
+  padding: 10px;
   text-align: center;
   transition: all 0.15s ease;
   font-weight: bold;
   font-size: 25px;
-  border-right: solid 1px;
-  margin-right: 20px;
+  border-right: solid 0.5px;
+  margin-right: 10px;
 }
 .product-count {
   margin: 2px 0 0;
@@ -91,25 +89,25 @@
 
 /* Controls design */
 .product-controls {
-  display: flex;
+  display: block;
   align-items: center;
   text-align: center;
   margin: 0px;
 }
-.product-controls a {
-  padding: 0 20px;
-  font-size: 17px;
-  color: #E6E6E6;
-}
-.product-controls a:hover {
-  color: #D3473C !important
-}
-.product-controls-hidden a {
-  color: transparent;
-  font-size: 15px;
-  transition: all 0.15s ease;
-  border-color: transparent;
-}
+// .product-controls a {
+//   padding: 0 20px;
+//   font-size: 32px;
+//   color: black;
+// }
+// .product-controls a:hover {
+//   color: #D3473C !important
+// }
+// .product-controls-hidden a {
+//   color: transparent;
+//   font-size: 15px;
+//   transition: all 0.15s ease;
+//   border-color: transparent;
+// }
 
 /* Hover effects */
 .product:hover {
@@ -135,6 +133,7 @@
 
 .revote {
   // widows: 300px;
+  white-space: normal !important;
   color: white;
   margin: 50px auto 40px auto;
   display: block;
