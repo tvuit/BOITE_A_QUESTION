@@ -11,7 +11,7 @@ class QuestionPolicy < ApplicationPolicy
   end
 
   def destroy?
-    record.user.id == user.id
+    true
   end
 
   def upvote?

@@ -8,7 +8,7 @@
   </div>
   <div class="row">
     <div class="col-xs-12">
-      <% @questions.order(:cached_votes_down).each do |question|  %>
+      <% @questions.order(cached_votes_up: :desc).each do |question|  %>
         <div class="product">
           <div class="product-upvote">
             <%= link_to like_question_path(question), method: :put do %>
@@ -20,11 +20,9 @@
             <p><%= question.description %></p>
           </div>
           <div class="product-controls">
-            <% if policy(Question).destroy? %>
+            <% if question.user == current_user %>
                <%= link_to "", question, method: :delete, class:"fa fa-trash" %>
-            <% if policy(Question).edit? %>
                <%= link_to "", edit_question_path(question), class:"fa fa-pencil" %>
-            <% end %>
             <% end %>
           </div>
         </div>
