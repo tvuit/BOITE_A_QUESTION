@@ -1,0 +1,17 @@
+<div class="product">
+  <div class="product-upvote">
+    <%= link_to like_question_path(question), method: :put do %>
+    <i class="fa fa-arrow-circle-up"></i><% end %>
+      <div class='product-count'><%= question.get_upvotes.size %></div>
+  </div>
+  <div class="product-body">
+      <h3><%= question.title %></h3>
+      <p><%= question.description %></p>
+  </div>
+  <div class="product-controls">
+    <% if question.user == current_user%>
+    <%= link_to "", question, method: :delete, class:"fa fa-trash" %>
+    <%= link_to "", edit_question_path(question), class:"fa fa-pencil" %>
+    <% end %>
+  </div>
+</div>
