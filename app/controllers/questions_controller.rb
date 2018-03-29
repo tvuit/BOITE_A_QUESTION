@@ -27,6 +27,7 @@ class QuestionsController < ApplicationController
   def create
     @question = current_user.questions.build(question_params)
     @question.save
+    ActionCable.server.broadcast("dynamic_index", { question: @question })
     authorize @question
 
     redirect_to questions_path

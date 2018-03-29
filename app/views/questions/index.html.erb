@@ -17,3 +17,14 @@
     </div>
   </div>
 </div>
+<% content_for :after_js do %>
+  <script>
+    App['dynamic_index'] = App.cable.subscriptions.create(
+      { channel: 'DynamicIndexChannel'},
+      { received: (data) => {
+        console.log(data)
+        }
+      }
+    )
+  </script>
+<% end %>

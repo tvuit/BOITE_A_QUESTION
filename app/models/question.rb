@@ -3,4 +3,5 @@ class Question < ApplicationRecord
     validates :title, uniqueness: true, presence: true
     acts_as_votable
 
+
 end
