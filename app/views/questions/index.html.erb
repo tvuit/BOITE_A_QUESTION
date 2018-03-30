@@ -4,24 +4,37 @@
 <div class="container">
   <div class="row">
     <div class="col-xs-10 col-xs-offset-1 col-sm-4 col-sm-offset-4">
-      <% if policy(Question).create? %>
+      <%# if policy(Question).create? %>
       <%= link_to "Poser une nouvelle question", new_question_path, class:"btn revote" %>
-      <% end %>
+      <%# end %>
     </div>
   </div>
   <div class="row">
-    <div class="col-xs-12">
+    <div class="col-xs-12" id="listequestion">
       <% @questions.order(cached_votes_up: :desc).each do |question|  %>
       <%= render "question", question: question %>
       <% end  %>
     </div>
   </div>
 </div>
+
 <% content_for :after_js do %>
   <script>
     App['dynamic_index'] = App.cable.subscriptions.create(
       { channel: 'DynamicIndexChannel'},
       { received: (data) => {
+        const questionList = document.getElementById('listequestion');
+        const qid = data.question.id;
+        const question = document.getElementById("question_" + qid);
+
+        if (data.test === "test"){
+          question.remove();
+        } else if (question !== null) {
+        question.remove();
+        questionList.insertAdjacentHTML('afterbegin', data.question_partial);
+      } else {
+        questionList.insertAdjacentHTML('beforeend', data.question_partial);
+      }
         console.log(data)
         }
       }
