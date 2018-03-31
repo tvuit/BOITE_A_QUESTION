@@ -26,9 +26,8 @@ class QuestionsController < ApplicationController
       test: "test",
       question_partial: ApplicationController.renderer.render(
               partial: "questions/question",
-              locals: { question: @question }
-        ),
-      current_user_id: user.id
+              locals: { question: @question, user_is_question_author: false }
+        )
       })
 
     redirect_to(questions_path)
@@ -43,9 +42,8 @@ class QuestionsController < ApplicationController
       question: @question,
       question_partial: ApplicationController.renderer.render(
               partial: "questions/question",
-              llocals: { question: @question }
+              locals: { question: @question, user_is_question_author: false }
         ),
-      current_user_id: user.id
       })
 
     redirect_to questions_path
@@ -53,13 +51,12 @@ class QuestionsController < ApplicationController
 
   def update
     @question.update(question_params)
-    ActionCable.server.broadcast("dynamic_index", {
+   ActionCable.server.broadcast("dynamic_index", {
       question: @question,
       question_partial: ApplicationController.renderer.render(
               partial: "questions/question",
-              locals: { question: @question }
+              locals: { question: @question, user_is_question_author: false }
         ),
-      current_user_id: user.id
       })
     redirect_to(questions_path)
 
@@ -73,9 +70,8 @@ class QuestionsController < ApplicationController
       question: @question,
       question_partial: ApplicationController.renderer.render(
               partial: "questions/question",
-              locals: { question: @question }
+              locals: { question: @question, user_is_question_author: false }
         ),
-      current_user_id: user.id
       })
     redirect_to(questions_path)
 

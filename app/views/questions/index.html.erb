@@ -12,7 +12,7 @@
   <div class="row">
     <div class="col-xs-12" id="listequestion">
       <% @questions.order(cached_votes_up: :desc).each do |question|  %>
-      <%= render "question", question: question %>
+      <%= render "question", question: question, user_is_question_author: question.user == current_user %>
       <% end  %>
     </div>
   </div>
@@ -33,10 +33,10 @@
         } else if (question !== null) {
         question.remove();
         questionList.insertAdjacentHTML('afterbegin', data.question_partial);
-        location.reload();
+
       } else {
         questionList.insertAdjacentHTML('beforeend', data.question_partial);
-        location.reload();
+
 
       }
         console.log(data)
