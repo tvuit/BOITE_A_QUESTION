@@ -21,27 +21,60 @@ class QuestionsController < ApplicationController
   def destroy
     @question.destroy
     authorize @question
+    ActionCable.server.broadcast("dynamic_index", {
+      question: @question,
+      test: "test",
+      question_partial: ApplicationController.renderer.render(
+              partial: "questions/question",
+              locals: { question: @question, current_user: current_user }
+        )
+      })
+
     redirect_to(questions_path)
+
   end
 
   def create
     @question = current_user.questions.build(question_params)
     @question.save
     authorize @question
+    ActionCable.server.broadcast("dynamic_index", {
+      question: @question,
+      question_partial: ApplicationController.renderer.render(
+              partial: "questions/question",
+              locals: { question: @question, current_user: current_user }
+        )
+      })
 
     redirect_to questions_path
   end
 
   def update
     @question.update(question_params)
+    ActionCable.server.broadcast("dynamic_index", {
+      question: @question,
+      question_partial: ApplicationController.renderer.render(
+              partial: "questions/question",
+              locals: { question: @question, current_user: current_user }
+        )
+      })
     redirect_to(questions_path)
+
   end
 
   def upvote
     @question = Question.find(params[:id])
     @question.upvote_by current_user
-    redirect_to(questions_path)
     authorize @question
+    ActionCable.server.broadcast("dynamic_index", {
+      question: @question,
+      question_partial: ApplicationController.renderer.render(
+              partial: "questions/question",
+              locals: { question: @question, current_user: current_user }
+        )
+      })
+    redirect_to(questions_path)
+
   end
 
   def downvote
