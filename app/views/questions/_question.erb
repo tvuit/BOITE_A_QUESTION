@@ -9,7 +9,7 @@
       <p><%= question.description %></p>
   </div>
   <div class="product-controls" id ="action-button">
-    <% if question.user == current_user%>
+    <% if user_is_messages_author == true %>
     <%= link_to "", question, method: :delete, class:"fa fa-trash" %>
     <%= link_to "", edit_question_path(question), class:"fa fa-pencil" %>
     <% end %>
