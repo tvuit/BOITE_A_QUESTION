@@ -9,7 +9,7 @@ Devise.setup do |config|
   # Devise will use the `secret_key_base` as its `secret_key`
   # by default. You can change it below and use your own secret key.
   # config.secret_key = '9c9ba6dc387bc10551e75510f9dd21352af1182d6a8e3e46ed0db2179b8223926e14afa7e2e0646e55f2fcd702513ba76bdd1f54a9acd96e2903896b7939450e'
-  
+
   # ==> Controller configuration
   # Configure the parent class to the devise controllers.
   # config.parent_controller = 'DeviseController'
@@ -280,4 +280,18 @@ Devise.setup do |config|
   # When using OmniAuth, Devise cannot automatically set OmniAuth path,
   # so you need to do it manually. For the users scope, it would be:
   # config.omniauth_path_prefix = '/my_engine/users/auth'
+end
+
+
+
+Warden::Manager.after_set_user do |user,auth,opts|
+  scope = opts[:scope]
+  auth.cookies.signed["#{scope}.id"] = user.id
+  auth.cookies.signed["#{scope}.expires_at"] = 30.minutes.from_now
+end
+
+Warden::Manager.before_logout do |user, auth, opts|
+  scope = opts[:scope]
+  auth.cookies.signed["#{scope}.id"] = nil
+  auth.cookies.signed["#{scope}.expires_at"] = nil
 end

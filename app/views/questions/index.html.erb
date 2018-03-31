@@ -26,14 +26,17 @@
         const questionList = document.getElementById('listequestion');
         const qid = data.question.id;
         const question = document.getElementById("question_" + qid);
+        // const controls = question.getElementById("action-button");
 
         if (data.test === "test"){
           question.remove();
         } else if (question !== null) {
         question.remove();
         questionList.insertAdjacentHTML('afterbegin', data.question_partial);
+        location.reload();
       } else {
         questionList.insertAdjacentHTML('beforeend', data.question_partial);
+        location.reload();
 
       }
         console.log(data)
