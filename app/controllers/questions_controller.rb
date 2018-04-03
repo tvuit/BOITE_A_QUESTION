@@ -53,6 +53,7 @@ class QuestionsController < ApplicationController
     @question.update(question_params)
    ActionCable.server.broadcast("dynamic_index", {
       question: @question,
+      test: "upvote",
       question_partial: ApplicationController.renderer.render(
               partial: "questions/question",
               locals: { question: @question, user_is_question_author: false }
@@ -67,6 +68,7 @@ class QuestionsController < ApplicationController
     @question.upvote_by current_user
     authorize @question
     ActionCable.server.broadcast("dynamic_index", {
+      test: "upvote",
       question: @question,
       question_partial: ApplicationController.renderer.render(
               partial: "questions/question",

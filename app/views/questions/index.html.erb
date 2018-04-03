@@ -30,6 +30,8 @@
 
         if (data.test === "test"){
           question.remove();
+        } else if (data.test === "upvote"){
+          location.reload();
         } else if (question !== null) {
         question.remove();
         questionList.insertAdjacentHTML('afterbegin', data.question_partial);
