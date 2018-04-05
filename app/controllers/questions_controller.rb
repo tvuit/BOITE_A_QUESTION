@@ -9,10 +9,12 @@ class QuestionsController < ApplicationController
   end
 
   def index
-    @questions = policy_scope(Question)
+    @questions = policy_scope(Question.where(asked: false))
   end
 
   def show
+    authorize @question
+
   end
 
   def edit
@@ -42,7 +44,7 @@ class QuestionsController < ApplicationController
       question: @question,
       question_partial: ApplicationController.renderer.render(
               partial: "questions/question",
-              locals: { question: @question, user_is_question_author: false }
+              locals: { question: @question, user_is_question_author: false}
         ),
       })
 
@@ -85,6 +87,14 @@ class QuestionsController < ApplicationController
     redirect_to(questions_path)
   end
 
+   def archive
+    @question = Question.find(params[:id])
+    @question.asked = true
+    @question.save
+    authorize @question
+    redirect_to(questions_path)
+  end
+
  private
 
   def question_params
@@ -95,5 +105,7 @@ class QuestionsController < ApplicationController
     @question = Question.find(params[:id])
     authorize @question
   end
+
+
 
 end

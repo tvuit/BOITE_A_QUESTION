@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 20180405070828) do
   create_table "questions", force: :cascade do |t|
     t.string "title"
     t.text "description"
-    t.boolean "asked"
+    t.boolean "asked", default: false
     t.date "end_date"
     t.integer "cached_votes_total", default: 0
     t.integer "cached_votes_score", default: 0
