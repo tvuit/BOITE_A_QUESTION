@@ -22,4 +22,8 @@ class QuestionPolicy < ApplicationPolicy
     true
   end
 
+   def archive?
+    true
+  end
+
 end

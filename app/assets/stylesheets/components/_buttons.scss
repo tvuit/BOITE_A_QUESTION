@@ -1,3 +1,21 @@
+.link-question {
+  text-decoration: none;
+  color: black;
+    &:hover {
+    text-decoration: none;
+  color: black;
+   }
+  }
+
+.fa-check {
+  color: #404040;
+  font-size: 32px;
+   &:hover {
+    font-size: 36px;
+    color: #f9c333;
+   }
+}
+
 .fa-arrow-circle-up {
   color: #404040;
   font-size: 32px;

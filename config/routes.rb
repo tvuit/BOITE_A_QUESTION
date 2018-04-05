@@ -6,6 +6,7 @@ Rails.application.routes.draw do
      member do
     put "like", to: "questions#upvote"
     put "dislike", to: "questions#downvote"
+    put "archive", to: "questions#archive"
   end
 
   end

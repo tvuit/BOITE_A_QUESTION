@@ -3,7 +3,7 @@ class CreateQuestions < ActiveRecord::Migration[5.1]
     create_table :questions do |t|
       t.string :title
       t.text :description
-      t.boolean :asked
+      t.boolean :asked, default: false
       t.date :end_date
       t.integer :cached_votes_total, default: 0
       t.integer :cached_votes_score, default: 0
