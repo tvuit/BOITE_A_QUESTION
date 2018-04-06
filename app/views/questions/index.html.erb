@@ -13,6 +13,7 @@
     <div class="col-xs-12" id="listequestion">
       <% @questions.order(cached_votes_up: :desc).each do |question|  %>
       <%= render "question", question: question, user_is_question_author: question.user == current_user || current_user.admin? %>
+      <% raise   %>
       <% end  %>
     </div>
   </div>
@@ -30,8 +31,6 @@
 
         if (data.test === "test"){
           question.remove();
-        } else if (data.test === "upvote"){
-          location.reload();
         } else if (question !== null) {
         question.remove();
         questionList.insertAdjacentHTML('afterbegin', data.question_partial);
