@@ -45,7 +45,7 @@ Rails.application.configure do
 
   # Mount Action Cable outside main process or domain
 config.action_cable.url = "wss://questionboxes.herokuapp.com/cable"
-config.action_cable.allowed_request_origins = [ "http://questionboxes.herokuapp.com", "https://questionboxes.herokuapp.com" ]
+config.action_cable.allowed_request_origins = [ "http://questionboxes.herokuapp.com", "https://questionboxes.herokuapp.com", "https://www.ftvbox.fr" ]
 
   # config.action_cable.mount_path = nil
   # config.action_cable.url = 'wss://example.com/cable'
