@@ -25,6 +25,7 @@
         const question = document.getElementById("question_" + qid);
         // const controls = question.getElementById("action-button");
 
+        if(data.test !== "upvote") {
         if (data.test === "test"){
           question.remove();
         } else if (question !== null) {
@@ -38,6 +39,7 @@
       }
         console.log(data)
         }
+       }
       }
     )
   </script>
