@@ -22,6 +22,7 @@ class ApplicationPolicy
     create?
   end
 
+
   def update?
     false
   end

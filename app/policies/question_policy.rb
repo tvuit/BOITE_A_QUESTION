@@ -1,10 +1,14 @@
 class QuestionPolicy < ApplicationPolicy
   class Scope < Scope
+    attr_reader :user, :scope
     def resolve
       scope.all
     end
   end
 
+  def live_index?
+    true
+  end
 
   def create?
     true

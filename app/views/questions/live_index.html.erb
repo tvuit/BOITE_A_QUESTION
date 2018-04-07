@@ -1,7 +1,9 @@
+
 <div class="container">
   <div class="row" style="padding-top: 30px;">
     <div class="col-xs-10 col-xs-offset-1 col-sm-4 col-sm-offset-4">
       <%# if policy(Question).create? %>
+
       <%= link_to "Poser une nouvelle question", new_question_path, class:"btn revote" %>
       <%# end %>
     </div>
@@ -27,6 +29,8 @@
 
         if (data.test === "test"){
           question.remove();
+        } else if (data.test === "upvote"){
+          location.reload();
         } else if (question !== null) {
         question.remove();
         questionList.insertAdjacentHTML('afterbegin', data.question_partial);
@@ -42,3 +46,4 @@
     )
   </script>
 <% end %>
+

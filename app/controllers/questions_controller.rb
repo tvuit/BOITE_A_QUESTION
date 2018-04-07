@@ -12,6 +12,11 @@ class QuestionsController < ApplicationController
     @questions = policy_scope(Question.where(asked: false))
   end
 
+  def live_index
+    @questions = Question.where(asked: false)
+    authorize @questions
+  end
+
   def show
     authorize @question
 
