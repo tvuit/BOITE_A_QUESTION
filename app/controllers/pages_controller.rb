@@ -4,6 +4,12 @@ class PagesController < ApplicationController
   def home
   end
 
+  def wiki
+  end
+
+  def welcome
+  end
+
   def index
   end
 
