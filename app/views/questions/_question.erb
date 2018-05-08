@@ -13,12 +13,14 @@
       <% if user_is_question_author == true %>
       <%= link_to "", question, method: :delete, class:"fa fa-trash" %>
       <%= link_to "", edit_question_path(question), class:"fa fa-pencil" %>
-      <%#= link_to "", question_path(question) do %>
       <%= link_to "", archive_question_path(question), method: :put, class:"fa fa-check" %>
-      <%# elsif user_is_admin == true %>
-      <%# raise %>
       <% end %>
     </div>
+  </div>
+  <div class="answer">
+    <% if question.answer != nil  %>
+      <%= link_to "voir la réponse", question_path(question), class:"link-question" %>
+    <% end  %>
   </div>
 
 <% end %>

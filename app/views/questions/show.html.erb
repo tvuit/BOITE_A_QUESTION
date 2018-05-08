@@ -10,5 +10,11 @@
         <p><%= @question.description %></p>
     </div>
   </div>
+  <div class="product">
+    <div class="product-body">
+      <h3>Réponse</h3>
+      <p style="color: black; font-weight:normal; margin-top: 25px;"><%= @question.answer %></p>
+    </div>
+  </div>
   <%= link_to "Retourner aux questions", questions_path, class:"btn revote" %>
 </div>
