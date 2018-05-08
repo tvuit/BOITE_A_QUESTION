@@ -13,7 +13,7 @@ class QuestionsController < ApplicationController
   end
 
   def archives
-    @questions = Question.where(asked: true)
+    @questions = Question.where(["cached_votes_up > ? and asked = ?", "0", "true"])
     authorize @questions
   end
 
