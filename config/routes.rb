@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   get 'wiki', to: "pages#wiki", as: :wiki
   get 'welcome', to: "pages#welcome", as: :welcome
   get 'live_index', to: "questions#live_index", as: :live_index
+   get 'archives', to: "questions#archives", as: :archives
   resources :questions do
      member do
     put "like", to: "questions#upvote"

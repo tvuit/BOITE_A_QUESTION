@@ -12,6 +12,11 @@ class QuestionsController < ApplicationController
     @questions = policy_scope(Question.where(asked: false))
   end
 
+  def archives
+    @questions = Question.where(asked: true)
+    authorize @questions
+  end
+
   def live_index
     @questions = Question.where(asked: false)
     authorize @questions
@@ -19,7 +24,6 @@ class QuestionsController < ApplicationController
 
   def show
     authorize @question
-
   end
 
   def edit
@@ -103,7 +107,7 @@ class QuestionsController < ApplicationController
  private
 
   def question_params
-    params.require(:question).permit(:title, :description, :end_date, :asked, :votes)
+    params.require(:question).permit(:title, :description, :end_date, :asked, :votes, :answer)
   end
 
   def set_question

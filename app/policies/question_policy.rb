@@ -10,6 +10,10 @@ class QuestionPolicy < ApplicationPolicy
     true
   end
 
+def archives?
+    true
+  end
+
   def create?
     true
   end

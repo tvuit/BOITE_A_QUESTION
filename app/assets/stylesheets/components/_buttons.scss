@@ -126,7 +126,20 @@
 //   transition: all 0.15s ease;
 //   border-color: transparent;
 // }
-
+.answer {
+    display: block;
+    background-color: #f8f8f8;
+    margin: -15px 4px 10px;
+    text-align: center;
+    padding: 4px;
+    font-size: 14px;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+    border-radius: 3px;
+    font-weight: bold;
+    &:hover {
+      background-color: #b8b8b8;
+    }
+}
 /* Hover effects */
 .product:hover {
   background: #f7f7fa;
