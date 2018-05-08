@@ -51,6 +51,9 @@
         <li><%= link_to destroy_user_session_path, method: :delete do %>
                 <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Log out") %>
               <% end %></li>
+                <li>
+      <%= link_to "Archives", "archives", class: "navbar-wagon-item navbar-wagon-link", style: "color: white;"%>
+      </li>
       </ul>
     </div>
   </div>
