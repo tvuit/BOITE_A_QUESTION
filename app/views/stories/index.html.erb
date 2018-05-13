@@ -7,8 +7,8 @@
       <div class="product">
         <div class="product-upvote hidden-xs">
         <%= image_tag "https://www.francetvinfo.fr/#{story.media}" %>
-
         </div>
+
         <div class="product-body">
         <h3><%= link_to "#{story.title}", "#{story.sharedUrl}", class:"link-question"%></h3>
         <p><%= story.description.force_encoding(Encoding::UTF_8) %></p>
