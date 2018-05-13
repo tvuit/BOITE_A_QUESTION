@@ -10,11 +10,13 @@
         <p><%= @question.description %></p>
     </div>
   </div>
-  <div class="product" style="margin-top: 28px; margin-bottom: 30px;">
-    <div class="product-body">
-      <h3>Réponse</h3>
-      <p style="color: black; font-weight:normal; margin-top: 25px; margin-bottom: 45px;"><%= @question.answer %></p>
+  <% if @question.answer != nil  %>
+    <div class="product" style="margin-top: 28px; margin-bottom: 30px;">
+      <div class="product-body">
+        <h3>Réponse</h3>
+        <p style="color: black; font-weight:normal; margin-top: 25px; margin-bottom: 45px;"><%= @question.answer %></p>
+      </div>
     </div>
+    <%= link_to "Retourner aux questions", questions_path, class:"btn revote" %>
   </div>
-  <%= link_to "Retourner aux questions", questions_path, class:"btn revote" %>
-</div>
+  <% end  %>

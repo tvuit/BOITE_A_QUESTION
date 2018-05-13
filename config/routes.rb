@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   mount ActionCable.server => "/cable"
   devise_for :users
   root to: 'questions#index'
+  resources :stories, except: :destroy
   get 'wiki', to: "pages#wiki", as: :wiki
   get 'welcome', to: "pages#welcome", as: :welcome
   get 'live_index', to: "questions#live_index", as: :live_index

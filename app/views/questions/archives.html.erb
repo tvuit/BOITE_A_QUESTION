@@ -5,12 +5,14 @@
       <%# end %>
     </div>
   </div>
-  <div class="row">
-    <div class="col-xs-12" id="listequestion">
-      <% @questions.order(updated_at: :desc).each do |question|  %>
-      <%= render "question", question: question, user_is_question_author: question.user == current_user || current_user.admin? %>
-      <% end  %>
+  <% if @questions != nil %>
+    <div class="row">
+      <div class="col-xs-12" id="listequestion" style="padding-top: 20px;">
+        <% @questions.order(updated_at: :desc).each do |question|  %>
+        <%= render "question", question: question, user_is_question_author: question.user == current_user || current_user.admin? %>
+        <% end  %>
+      </div>
     </div>
+      <%= link_to "Retourner aux questions", questions_path, class:"btn revote" %>
   </div>
-    <%= link_to "Retourner aux questions", questions_path, class:"btn revote" %>
-</div>
+<% end  %>
