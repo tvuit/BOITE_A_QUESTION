@@ -1,1 +1,8 @@
-stories_controller.rb
+class StoriesController < ApplicationController
+
+  def index
+    @stories = policy_scope(Story.all)
+
+  end
+
+end
