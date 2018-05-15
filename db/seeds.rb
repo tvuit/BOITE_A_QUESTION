@@ -16,7 +16,8 @@ date = Time.now.to_i
 until date < 1514764800
 response = HTTParty.get("https://stream.francetvinfo.fr/stream/contents/taxo/desk/stories.json/page/#{page_number}")
 response["contents"].each do |article|
-Story.create!(title: article["title"], description: article["description"], firstPublicationDate: article["firstPublicationDate"], sharedUrl: article["sharedUrl"], media: article["medias"][0]["urlThumbnail"])
+  fb = HTTParty.get("https://graph.facebook.com/?id=#{article["sharedUrl"]}")["share"]["share_count"]
+Story.create!(title: article["title"], description: article["description"], firstPublicationDate: article["firstPublicationDate"], sharedUrl: article["sharedUrl"], media: article["medias"][0]["urlThumbnail"], fb_count: fb)
   date = article["firstPublicationDate"]
   end
   page_number += 1

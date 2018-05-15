@@ -13,6 +13,7 @@
         <h3><%= link_to "#{story.title}", "#{story.sharedUrl}", class:"link-question"%></h3>
         <p><%= story.description.force_encoding(Encoding::UTF_8) %></p>
         </div>
+        <p class="answer" style="color:blue; text-algn: right; margin: 4px"><i class="fa fa-facebook"> </i><%= story.fb_count %></p>
       </div>
       <% end  %>
           <% end  %>
