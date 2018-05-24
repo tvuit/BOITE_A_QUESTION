@@ -13,10 +13,17 @@
         <h3><%= link_to "#{story.title}", "#{story.sharedUrl}", class:"link-question"%></h3>
         <p><%= story.description.force_encoding(Encoding::UTF_8) %></p>
         </div>
-        <p class="answer" style="color:blue; text-algn: right; margin: 4px"><i class="fa fa-facebook"> </i><%= story.fb_count %></p>
+        <div class="answer" style="margin: 2px; height: 100%;">
+          <p style="color:blue; text-algn: right; margin: 4px"><br><i class="fa fa-facebook"> </i><br><%= story.fb_count %></p>
+          <p style="color:grey; text-algn: right; margin: 4px"><br><i class="fa fa-mobile"> <br></i>
+            <%= story.mobile_visit %></p>
+          <p style="color:grey; text-algn: right; margin: 4px"><br><i class="fa fa-laptop"><br>
+          </i><%= story.desktop_visit %><br></p>
+        </div>
       </div>
       <% end  %>
           <% end  %>
     </div>
+    <%= paginate @stories %>
   </div>
 </div>

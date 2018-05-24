@@ -254,6 +254,7 @@ DEPENDENCIES
   font-awesome-sass (~> 4.4.0)
   httparty
   jbuilder (~> 2.0)
+  kaminari
   listen (~> 3.0.5)
   pg (~> 0.21)
   pry-byebug
