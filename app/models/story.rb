@@ -1,3 +1,3 @@
 class Story < ApplicationRecord
-    max_paginates_per 25
+    paginates_per 75
 end

@@ -178,4 +178,114 @@
   background-color: #f9c333;
   border-color: #404040;
    }
+ }
+
+
+.pagination .page {
+  padding: 12px;
+  margin: 8px;
+  background-color: #C0C0C0;
+  border-color: #404040;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  color: white;
+  text-decoration: none;
+  & a {
+  color: white;
+   }
+     & :hover {
+  color: white;
+  background-color: #404040;
+   }
 }
+
+.pagination .current {
+  padding: 12px;
+  margin: 8px;
+  background-color: #404040;
+  border-color: #404040;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  color: white;
+  text-decoration: none;
+  & a {
+  color: white;
+   }
+ }
+
+   .pagination .next {
+  padding: 12px;
+  margin: 8px;
+  background-color: #C0C0C0;
+  border-color: #404040;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  color: white;
+  text-decoration: none;
+  & a {
+  color: white;
+   }
+   & :hover {
+  color: white;
+  background-color: #404040;
+   }
+     & :hover {
+  color: white;
+  background-color: #404040;
+   }
+  }
+
+      .pagination .last {
+  padding: 12px;
+  margin: 8px;
+  background-color: #C0C0C0;
+  border-color: #404040;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  color: white;
+  text-decoration: none;
+  & a {
+  color: white;
+   }
+     & :hover {
+  color: white;
+  background-color: #404040;
+   }
+}
+   .pagination .first {
+  padding: 12px;
+  margin: 8px;
+  background-color: #C0C0C0;
+  border-color: #404040;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  color: white;
+  text-decoration: none;
+  & a {
+  color: white;
+   }
+     & :hover {
+  color: white;
+  background-color: #404040;
+   }
+}
+
+ .pagination .prev {
+  padding: 12px;
+  margin: 8px;
+  background-color: #C0C0C0;
+  border-color: #404040;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  color: white;
+  text-decoration: none;
+  & a {
+  color: white;
+   }
+     & :hover {
+  color: white;
+  background-color: #404040;
+   }
+}
+
+
