@@ -28,7 +28,7 @@ response["contents"].each do |article|
 #       mobile_visit = mcontent["m_visits"]
 #       end
 #     end
-
+# EN PIOCHANT PAR ID  ICI >>>> https://apirest.atinternet-solutions.com/data/v2/json/getData?&columns={cl_398523,m_visits,cl_436555}&sort={-m_visits}&filter={cl_398523:{$eq:'INTERPOLE ICI ID ARTICLE'},cl_436555:{$eq:'2-1'}}&space={s:573502}&period={R:{M:{start:'-10',end:'-1'}}}&max-results=50&page-num=1
 #   desktop_views = HTTParty.get("https://apirest.atinternet-solutions.com/data/v2/json/getData?&columns={cl_398523,m_visits}&sort={-m_visits}&filter={cl_398518:{$period:'all'},cl_436555:{$eq:'2-1'}}&space={s:573502}&period={R:{D:{start:'-45',end:'-1'}}}&max-results=1000&apikey=292d367a-d16a-49cd-b568-368412d2c022")
 #   desktop_views["DataFeed"][0]["Rows"].each do |vcontent|
 #     if vcontent["cl_398523"] == id

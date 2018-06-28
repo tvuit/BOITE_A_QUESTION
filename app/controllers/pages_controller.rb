@@ -10,6 +10,9 @@ class PagesController < ApplicationController
   def welcome
   end
 
+  def chefsftvi
+  end
+
   def index
   end
 
